@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <title>Tableau Write-back Extension</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/xpand.css">
+    <link rel="stylesheet" href="./css/docs.css">
+    <script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <style>
+        img {
+            height: 120px;
+            width: 120px;
+            margin-left: 5px;
+            text-align: center;
+        }  
+    </style>
+</head>
+
+<body>
+    <div class="top-container">
+        <div class='row hc-container'>
+            <div class="col-md-2">
+                <a class="xp-bar-item xp-center xp-button" href="https://www.xpand-it.com/" target="_blank"><img src="./img/xpandit-white.png"/></a>
+            </div>
+            <div class="col-md-10">
+                <h1>Tableau Write-Back Extension</h1>
+                <p>A Tableau Extension to allow send data to a REST endpoint</p>
+            </div>
+    </div>
+        
+    </div>
+    
+    <div class="header" id="myHeader">
+        <div class="hc">
+            <div class="hc-logo" id='hc-logo' style="width: 0%">
+                <a id='sticky_ic' class="xp-bar-item xp-center xp-button" href="https://www.xpand-it.com/" target="_blank" style="display: none; padding-left: 0px;"><img class='logo' src="./img/xpandit-logo.png"/></a>
+            </div>
+            <div class="hc-buttons" id='hc-buttons' style='width: 100%'>
+                <div class="buttons" id='sticky-buttons'>
+                    <a href="https://github.com/xpandit/tableau_write-back_extension" class="btn btn-md btn-light">GitHub</a>
+                    <a href="https://xpandit.github.io/tableau_write-back_extension/manifest/XpWriteBack.trex" class="btn btn-md btn-light">Download Manifest File</a>
+                    <a href="./docs/extensionConfiguration.html" class="btn btn-md btn-light">Setup Extension</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="cc">
+            <h2>Description</h2>
+
+            <p>The Tableau Write-back was implemented by Xpand IT and allows you to select data from your sheets, edit or add new information to it and persist it somewhere.
+                This extension can be used, for instance to categorize (add more info to your categories) or add comments to your data.</p>
+            <p>As an easy way to plug and play the extension, we provide a script that you can use in your Google Spreadsheet to write back data to it.
+                Nevertheless, the extension is flexible enough so you can plug it to your own service to write the results somewhere else.</p>
+            
+            <div class="documentation">
+                <h2>Documentation</h2>
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href="./docs/extensionConfiguration.html" target="_blank">
+                            <div class="thumbnail">
+                                <div class="tc">
+                                    <i class="fas fa-cog img-thumbnail" style="width: 80%"></i>
+                                    <h3>Setup Extension</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="./docs/setGoogleSpreadsheet.html" target="_blank">
+                            <div class="thumbnail">
+                                <div class="tc">
+                                    <i class="fas fa-file-alt img-thumbnail" style="width: 80%"></i>
+                                    <h3>Spreadsheet Configuration</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="./docs/features.html" target="_blank">
+                            <div class="thumbnail">
+                                <div class="tc">
+                                    <i class="fas fa-code img-thumbnail" style="width: 80%"></i>
+                                    <h3>Features</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                            <a href="./docs/testingSteps.html" target="_blank">
+                                <div class="thumbnail">
+                                    <div class="tc">
+                                        <i class="fas fa-paste img-thumbnail" style="width: 80%"></i>
+                                        <h3>Testing Steps</h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                </div>
+            </div>
+            <h2>Installing the Extension</h2>
+
+            <p>Download and install the Extensions API version of Tableau Desktop from the <a href="https://prerelease.tableau.com">Tableau Extensions API Developer Preview</a> site. Under <strong>Resources</strong>, click <strong>Extensions API Software Downloads</strong>.</p>
+
+            <p>This extension was lastly tested on: </p>
+            <ul>
+                <li>Tableau 2018.2 Beta 2;</li>
+            </ul>
+
+            <p>Extension API used:</p>
+            <ul>
+                <li>Version 0.16.0</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- <div class="footer">
+        <div class="fc">
+            <a class="logo-button" href="https://www.xpand-it.com/" target="_blank"><img class='logo' src="./img/xpandit-logo-color.png"/></a>
+        </div>
+    </div> -->
+
+    <script>
+        window.onscroll = function() {myFunction()};
+        
+        var header = document.getElementById("myHeader");
+        var sticky = header.offsetTop;
+        
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                header.classList.add("sticky");
+                document.getElementById("sticky_ic").style.display = 'inline';
+                document.getElementById("hc-logo").style.width = '20%';
+                document.getElementById("hc-buttons").style.width = '80%';
+                document.getElementById("sticky-buttons").style.width = '80%';
+                
+            } else {
+                header.classList.remove("sticky");
+                document.getElementById("sticky_ic").style.display = 'none';
+                document.getElementById("hc-logo").style.width = '0%';
+                document.getElementById("hc-buttons").style.width = '100%';
+                document.getElementById("sticky-buttons").style.width = '60%';
+            }
+        }
+    </script>
+</body>
+</html>
